@@ -1,3 +1,7 @@
+"""
+使用PyMySQL连接数据库,并返回数据库对象
+"""
+
 import pymysql
 
 

@@ -1,3 +1,7 @@
+"""
+使用Login类进行登录，Login类中的login方法返回True或False，表示登录成功或失败
+"""
+
 from Function.SQLConnect import SQLConnect
 
 
