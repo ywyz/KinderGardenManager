@@ -7,9 +7,11 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import pyqtSignal
 
 
 class Ui_MainFunction(QtWidgets.QWidget):
+    switched_to_userManager = pyqtSignal()
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -41,7 +43,7 @@ class Ui_MainFunction(QtWidgets.QWidget):
         self.pushButton_8 = QtWidgets.QPushButton(parent=MainFunction)
         self.pushButton_8.setGeometry(QtCore.QRect(550, 570, 231, 71))
         self.pushButton_8.setObjectName("pushButton_8")
-
+        self.pushButton.clicked.connect(self.switch_to_user_manager)
         self.retranslateUi(MainFunction)
         QtCore.QMetaObject.connectSlotsByName(MainFunction)
 
@@ -57,4 +59,5 @@ class Ui_MainFunction(QtWidgets.QWidget):
         self.pushButton_7.setText(_translate("MainFunction", "导入导出数据"))
         self.pushButton_8.setText(_translate("MainFunction", "退出"))
 
-
+    def switch_to_user_manager(self):
+        self.switched_to_userManager.emit()

@@ -12,6 +12,7 @@ from PyQt6 import QtWidgets
 from UI.LoginWidget import LoginUI
 from PyQt6.QtWidgets import QStackedWidget, QMainWindow, QApplication
 from UI.MainWidget import Ui_MainFunction
+from UI.UserManagerUI import Ui_UserManager
 
 
 class Ui_MainWindow(QMainWindow):
@@ -32,16 +33,19 @@ class Ui_MainWindow(QMainWindow):
         self.setCentralWidget(self.stacked_widget)
         self.login_page = LoginUI()
         self.main_function_page = Ui_MainFunction()
+        self.userManager_page = Ui_UserManager()
         self.stacked_widget.addWidget(self.login_page)
         self.stacked_widget.addWidget(self.main_function_page)
+        self.stacked_widget.addWidget(self.userManager_page)
         self.login_page.login_success.connect(self.show_main_function)
+        self.main_function_page.switched_to_userManager.connect(self.show_user_manager)
         self.stacked_widget.setCurrentWidget(self.login_page)
 
     def show_main_function(self):
-        self.stacked_widget.setCurrentWidget(self.main_function_page)
+        self.stacked_widget.setCurrentWidget(self.main_function_page)\
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    window = Ui_MainWindow()
-    window.show()
-    sys.exit(app.exec())
+    def show_user_manager(self):
+        self.stacked_widget.setCurrentWidget(self.userManager_page)
+
+
+
