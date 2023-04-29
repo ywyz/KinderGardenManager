@@ -28,4 +28,12 @@ class UserManager:
             self.db.close()
             return False
 
+    def load_data(self):
+        cursor = self.db.cursor()
+        # 执行查询
+        cursor.execute("SELECT * FROM Users")
+        rows = cursor.fetchall()
+        self.db.close()
+        return rows
+
 
