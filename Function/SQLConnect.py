@@ -9,9 +9,9 @@ class SQLConnect:
     def __init__(self):
         self.db = pymysql.connect(host='sh-cynosdbmysql-grp-lhkebs8k.sql.tencentcdb.com',
                                   user='ywyz',
-                                  password='YUEwei980924',
+                                  password=' ',
                                   database='KinderGarten',
-                                  port=21651)
+                                  port=21654)
 
     def connect(self):
         return self.db
