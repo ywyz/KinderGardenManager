@@ -8,15 +8,14 @@ import pymysql
 class SQLConnect:
     def __init__(self):
         self.db = pymysql.connect(host='sh-cynosdbmysql-grp-lhkebs8k.sql.tencentcdb.com',
-                                  user='ywyz',
+                                  user='',
                                   password='',
                                   database='KinderGarten',
-                                  port=)
+                                  port=0000)
 
     def connect(self):
         return self.db
 
     def close(self):
         self.db.close()
-
 

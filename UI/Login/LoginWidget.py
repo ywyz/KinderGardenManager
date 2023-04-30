@@ -57,6 +57,10 @@ class Ui_Login(QWidget):
         Form.setWindowTitle(_translate("Form", "Form"))
 
     def login(self):
+        """
+        登录
+        :return:
+        """
         username = self.lineEdit.text()
         password = self.lineEdit_2.text()
         if Login().login(username, password):

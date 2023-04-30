@@ -16,6 +16,7 @@ from PyQt6.QtCore import pyqtSignal
 
 class Ui_MainFunction(QtWidgets.QWidget):
     switched_to_userManager = pyqtSignal()
+    switched_to_studentsManager = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -49,6 +50,11 @@ class Ui_MainFunction(QtWidgets.QWidget):
         self.pushButton_8.setGeometry(QtCore.QRect(800, 570, 231, 71))
         self.pushButton_8.setObjectName("pushButton_8")
         self.pushButton.clicked.connect(self.switch_to_user_manager)
+        self.pushButton_2.clicked.connect(self.switch_to_students_manager)
+        """
+        :todo: 退出不能关闭全部窗口
+        """
+        self.pushButton_8.clicked.connect(MainFunction.close)
         self.retranslateUi(MainFunction)
         QtCore.QMetaObject.connectSlotsByName(MainFunction)
 
@@ -57,8 +63,8 @@ class Ui_MainFunction(QtWidgets.QWidget):
         MainFunction.setWindowTitle(_translate("MainFunction", "Form"))
         self.pushButton.setText(_translate("MainFunction", "账号管理"))
         self.pushButton_2.setText(_translate("MainFunction", "学生（幼儿园）信息管理"))
-        self.pushButton_3.setText(_translate("MainFunction", "食堂管理"))
-        self.pushButton_4.setText(_translate("MainFunction", "后勤管理"))
+        self.pushButton_3.setText(_translate("MainFunction", "教职工信息管理"))
+        self.pushButton_4.setText(_translate("MainFunction", "食堂管理"))
         self.pushButton_5.setText(_translate("MainFunction", "后勤管理"))
         self.pushButton_6.setText(_translate("MainFunction", "教学管理"))
         self.pushButton_7.setText(_translate("MainFunction", "导入导出数据"))
@@ -66,3 +72,6 @@ class Ui_MainFunction(QtWidgets.QWidget):
 
     def switch_to_user_manager(self):
         self.switched_to_userManager.emit()
+
+    def switch_to_students_manager(self):
+        self.switched_to_studentsManager.emit()
