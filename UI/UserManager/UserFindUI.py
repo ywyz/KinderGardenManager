@@ -21,20 +21,17 @@ class Ui_FindUser(QtWidgets.QWidget):
 
     def setupUi(self, UserFind):
         """
-        :todo 需要添加实现和提交修改、删除用户、返回上一层的功能
         :param UserFind:
         :return:
         """
         UserFind.setObjectName("UserFind")
-        UserFind.resize(1108, 858)
+        UserFind.resize(1920, 1080)
         self.tableWidget = QtWidgets.QTableWidget(parent=UserFind)
-        self.tableWidget.setGeometry(QtCore.QRect(30, 20, 500, 400))
+        self.tableWidget.setGeometry(QtCore.QRect(250, 200, 500, 400))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
-        self.pushButton = QtWidgets.QPushButton(parent=UserFind)
-        self.pushButton.setGeometry(QtCore.QRect(270, 600, 141, 51))
-        self.pushButton.setObjectName("pushButton")
+
         self.pushButton_2 = QtWidgets.QPushButton(parent=UserFind)
         self.pushButton_2.setGeometry(QtCore.QRect(580, 600, 141, 51))
         self.pushButton_2.setObjectName("pushButton_2")
@@ -47,21 +44,32 @@ class Ui_FindUser(QtWidgets.QWidget):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.pushButton.setText(_translate("Form", "提交修改"))
         self.pushButton_2.setText(_translate("Form", "返回"))
 
     def show_data(self):
         """
-        :todo 需要曾加表头
         :return:
         """
         user = UserManager()
         data = user.load_data()
         self.tableWidget.setRowCount(len(data))
         self.tableWidget.setColumnCount(len(data[0]))
+        self.tableWidget.setItem(0, 0, QTableWidgetItem("用户ID"))
+        self.tableWidget.setItem(0, 1, QTableWidgetItem("用户名"))
+        self.tableWidget.setItem(0, 2, QTableWidgetItem("用户密码"))
+        self.tableWidget.setItem(0, 3, QTableWidgetItem("用户权限"))
         for i, row in enumerate(data):
             for j, value in enumerate(row):
-                self.tableWidget.setItem(i, j, QTableWidgetItem(str(value)))
+                if j == 3:
+                    if value == 0:
+                        value = "园长"
+                    elif value == 1:
+                        value = "教师"
+                    elif value == 2:
+                        value = "保健老师"
+                    elif value == None:
+                        value = "未设置"
+                self.tableWidget.setItem(i+1, j, QTableWidgetItem(str(value)))
 
     def switch_to_UserManager(self):
         self.switched_to_UserManager.emit()

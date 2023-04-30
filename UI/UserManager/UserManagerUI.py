@@ -14,7 +14,7 @@ from PyQt6 import QtCore, QtWidgets
 
 class Ui_UserManager(QtWidgets.QWidget):
     switched_to_addUser = QtCore.pyqtSignal()
-    switched_to_deleteUser = QtCore.pyqtSignal()
+    switched_to_changeUser = QtCore.pyqtSignal()
     switched_to_menu = QtCore.pyqtSignal()
     switched_to_findUser = QtCore.pyqtSignal()
     def __init__(self):
@@ -23,25 +23,25 @@ class Ui_UserManager(QtWidgets.QWidget):
 
     def setupUi(self, UserManager):
         UserManager.setObjectName("UserManager")
-        UserManager.resize(1113, 869)
+        UserManager.resize(1920, 1080 )
         self.pushButton = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton.setGeometry(QtCore.QRect(270, 200, 151, 71))
+        self.pushButton.setGeometry(QtCore.QRect(480, 200, 151, 71))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton_2.setGeometry(QtCore.QRect(630, 200, 151, 71))
+        self.pushButton_2.setGeometry(QtCore.QRect(800, 200, 151, 71))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton_3.setGeometry(QtCore.QRect(270, 370, 151, 71))
+        self.pushButton_3.setGeometry(QtCore.QRect(480, 370, 151, 71))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton_4.setGeometry(QtCore.QRect(630, 370, 151, 71))
+        self.pushButton_4.setGeometry(QtCore.QRect(800, 370, 151, 71))
         self.pushButton_4.setObjectName("pushButton_4")
 
         self.retranslateUi(UserManager)
         QtCore.QMetaObject.connectSlotsByName(UserManager)
         self.pushButton.clicked.connect(self.addUser)
         self.pushButton_2.clicked.connect(self.findUser)
-        self.pushButton_3.clicked.connect(self.deleteUser)
+        self.pushButton_3.clicked.connect(self.changeUser)
         self.pushButton_4.clicked.connect(self.menu)
 
     def retranslateUi(self, UserManager):
@@ -49,15 +49,18 @@ class Ui_UserManager(QtWidgets.QWidget):
         UserManager.setWindowTitle(_translate("UserManager", "Form"))
         self.pushButton.setText(_translate("UserManager", "新增账号"))
         self.pushButton_2.setText(_translate("UserManager", "查找账号"))
-        self.pushButton_3.setText(_translate("UserManager", "删除账号"))
+        self.pushButton_3.setText(_translate("UserManager", "修改账号"))
         self.pushButton_4.setText(_translate("UserManager", "返回"))
 
     def addUser(self):
         self.switched_to_addUser.emit()
-    def deleteUser(self):
-        self.switched_to_deleteUser.emit()
+
+    def changeUser(self):
+        self.switched_to_changeUser.emit()
+
     def menu(self):
         self.switched_to_menu.emit()
+
     def findUser(self):
         self.switched_to_findUser.emit()
 

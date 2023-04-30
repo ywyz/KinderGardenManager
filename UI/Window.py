@@ -14,6 +14,7 @@ from UI.MainWidget import Ui_MainFunction
 from UI.UserManager.UserManagerUI import Ui_UserManager
 from UI.UserManager.UserAddUI import Ui_AddUser
 from UI.UserManager.UserFindUI import Ui_FindUser
+from UI.UserManager.UserChangeUI import Ui_ChangeUser
 from UI.Login.LoginWidget import Ui_Login
 
 
@@ -24,7 +25,7 @@ class Ui_MainWindow(QMainWindow):
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1130, 863)
+        MainWindow.resize(1920, 1080)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -41,6 +42,7 @@ class Ui_MainWindow(QMainWindow):
         self.userManager_page = Ui_UserManager()        # 用户管理界面
         self.addUser_page = Ui_AddUser()                # 添加用户界面
         self.findUser_page = Ui_FindUser()              # 查找用户界面
+        self.changeUser_page = Ui_ChangeUser()          # 修改用户界面
 
         # 将所有界面添加到QStackedWidget中
         self.stacked_widget.addWidget(self.login_page)
@@ -48,6 +50,7 @@ class Ui_MainWindow(QMainWindow):
         self.stacked_widget.addWidget(self.userManager_page)
         self.stacked_widget.addWidget(self.addUser_page)
         self.stacked_widget.addWidget(self.findUser_page)
+        self.stacked_widget.addWidget(self.changeUser_page)
 
         # 信号与槽
         self.login_page.login_success.connect(self.show_main_function)          # 登录成功，切换到主功能界面
@@ -56,9 +59,11 @@ class Ui_MainWindow(QMainWindow):
         self.main_function_page.switched_to_userManager.connect(self.show_user_manager)     # 主界面切换到用户管理界面
         self.userManager_page.switched_to_addUser.connect(self.show_addUser)                # 用户管理界面切换到添加用户界面
         self.userManager_page.switched_to_findUser.connect(self.show_findUser)              # 用户管理界面切换到查找用户界面
+        self.userManager_page.switched_to_changeUser.connect(self.show_changeUser)              # 用户管理界面切换到修改用户界面
         self.userManager_page.switched_to_menu.connect(self.show_main_function)             # 用户管理界面切换到主功能界面
         self.addUser_page.switched_to_UserManager.connect(self.show_user_manager)           # 添加用户界面切换到用户管理界面
-        self.findUser_page.switched_to_UserManager.connect(self.show_user_manager)        # 查找用户界面切换到用户管理界面
+        self.findUser_page.switched_to_UserManager.connect(self.show_user_manager)          # 查找用户界面切换到用户管理界面
+        self.changeUser_page.switched_to_UserManager.connect(self.show_user_manager)        # 修改用户界面切换到用户管理界面
 
         # 设置初始界面
         self.stacked_widget.setCurrentWidget(self.login_page)
@@ -75,3 +80,6 @@ class Ui_MainWindow(QMainWindow):
 
     def show_findUser(self):
         self.stacked_widget.setCurrentWidget(self.findUser_page)
+
+    def show_changeUser(self):
+        self.stacked_widget.setCurrentWidget(self.changeUser_page)

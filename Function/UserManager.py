@@ -18,7 +18,7 @@ class UserManager:
         """
         cursor = self.db.cursor()
         cursor.execute("INSERT INTO Users (UserName, UserPassword, UserPermissions) VALUES (%s, %s, %s)",
-                            (username, password, Permissions))
+                       (username, password, Permissions))
         try:
             self.db.commit()
             self.db.close()
@@ -36,4 +36,27 @@ class UserManager:
         self.db.close()
         return rows
 
+    def delete_User(self, username, password):
+        cursor = self.db.cursor()
+        cursor.execute("DELETE FROM Users WHERE UserName = %s AND UserPassword = %s", (username, password))
+        try:
+            self.db.commit()
+            self.db.close()
+            return True
+        except:
+            self.db.rollback()
+            self.db.close()
+            return False
 
+    def change_User(self, username, password, newPassword,Permissions):
+        cursor = self.db.cursor()
+        cursor.execute("UPDATE Users SET UserPermissions = %s AND UserPassword = %s WHERE UserName = %s AND UserPassword = %s",
+                       (Permissions, newPassword, username, password))
+        try:
+            self.db.commit()
+            self.db.close()
+            return True
+        except:
+            self.db.rollback()
+            self.db.close()
+            return False

@@ -12,7 +12,7 @@ class Ui_AddUser(QtWidgets.QWidget):
 
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1126, 862)
+        Form.resize(1920, 1080)
         self.label = QtWidgets.QLabel(parent=Form)
         self.label.setGeometry(QtCore.QRect(420, 240, 71, 31))
         self.label.setObjectName("label")

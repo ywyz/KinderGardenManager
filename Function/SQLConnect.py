@@ -11,7 +11,7 @@ class SQLConnect:
                                   user='ywyz',
                                   password='',
                                   database='KinderGarten',
-                                  port=21651)
+                                  port=)
 
     def connect(self):
         return self.db
