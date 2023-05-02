@@ -13,6 +13,7 @@ from PyQt6.QtCore import pyqtSignal
 class Ui_StudentsBasicManager(QtWidgets.QWidget):
     switched_to_student_manager_page = pyqtSignal()
     switched_to_student_add_page = pyqtSignal()
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)

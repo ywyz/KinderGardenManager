@@ -21,6 +21,7 @@ from UI.StudentsManager.StudentsBasicSystem import Ui_StudentsBasicManager
 from UI.StudentsManager.StudentAddSingle1 import Ui_StudentAddSingle1
 from UI.StudentsManager.StudentAddSingle2 import Ui_StudentAddSingle2
 
+
 class Ui_MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -40,16 +41,16 @@ class Ui_MainWindow(QMainWindow):
         self.stacked_widget = QStackedWidget()
         self.setCentralWidget(self.stacked_widget)
 
-        self.login_page = Ui_Login()                    # 登录界面
-        self.main_function_page = Ui_MainFunction()     # 主功能界面
-        self.userManager_page = Ui_UserManager()        # 用户管理界面
-        self.addUser_page = Ui_AddUser()                # 添加用户界面
-        self.findUser_page = Ui_FindUser()              # 查找用户界面
-        self.changeUser_page = Ui_ChangeUser()          # 修改用户界面
-        self.studentsManager_page = Ui_StudentsManager()# 学生管理界面
-        self.studentsBasicManager_page = Ui_StudentsBasicManager()      # 学生基本信息管理界面
-        self.studentAddSingle1_page = Ui_StudentAddSingle1()            # 学生基本信息添加界面1
-        self.studentAddSingle2_page = Ui_StudentAddSingle2()            # 学生基本信息添加界面2
+        self.login_page = Ui_Login()  # 登录界面
+        self.main_function_page = Ui_MainFunction()  # 主功能界面
+        self.userManager_page = Ui_UserManager()  # 用户管理界面
+        self.addUser_page = Ui_AddUser()  # 添加用户界面
+        self.findUser_page = Ui_FindUser()  # 查找用户界面
+        self.changeUser_page = Ui_ChangeUser()  # 修改用户界面
+        self.studentsManager_page = Ui_StudentsManager()  # 学生管理界面
+        self.studentsBasicManager_page = Ui_StudentsBasicManager()  # 学生基本信息管理界面
+        self.studentAddSingle1_page = Ui_StudentAddSingle1()  # 学生基本信息添加界面1
+        self.studentAddSingle2_page = Ui_StudentAddSingle2()  # 学生基本信息添加界面2
 
         # 将所有界面添加到QStackedWidget中
         self.stacked_widget.addWidget(self.login_page)
@@ -64,31 +65,34 @@ class Ui_MainWindow(QMainWindow):
         self.stacked_widget.addWidget(self.studentAddSingle2_page)
 
         # 信号与槽
-        self.login_page.login_success.connect(self.show_main_function)          # 登录成功，切换到主功能界面
+        self.login_page.login_success.connect(self.show_main_function)  # 登录成功，切换到主功能界面
 
         # 切换到用户管理界面
-        self.main_function_page.switched_to_userManager.connect(self.show_user_manager)     # 主界面切换到用户管理界面
-        self.userManager_page.switched_to_addUser.connect(self.show_addUser)                # 用户管理界面切换到添加用户界面
-        self.userManager_page.switched_to_findUser.connect(self.show_findUser)              # 用户管理界面切换到查找用户界面
-        self.userManager_page.switched_to_changeUser.connect(self.show_changeUser)              # 用户管理界面切换到修改用户界面
-        self.userManager_page.switched_to_menu.connect(self.show_main_function)             # 用户管理界面切换到主功能界面
-        self.addUser_page.switched_to_UserManager.connect(self.show_user_manager)           # 添加用户界面切换到用户管理界面
-        self.findUser_page.switched_to_UserManager.connect(self.show_user_manager)          # 查找用户界面切换到用户管理界面
-        self.changeUser_page.switched_to_UserManager.connect(self.show_user_manager)        # 修改用户界面切换到用户管理界面
+        self.main_function_page.switched_to_userManager.connect(self.show_user_manager)  # 主界面切换到用户管理界面
+        self.userManager_page.switched_to_addUser.connect(self.show_addUser)  # 用户管理界面切换到添加用户界面
+        self.userManager_page.switched_to_findUser.connect(self.show_findUser)  # 用户管理界面切换到查找用户界面
+        self.userManager_page.switched_to_changeUser.connect(self.show_changeUser)  # 用户管理界面切换到修改用户界面
+        self.userManager_page.switched_to_menu.connect(self.show_main_function)  # 用户管理界面切换到主功能界面
+        self.addUser_page.switched_to_UserManager.connect(self.show_user_manager)  # 添加用户界面切换到用户管理界面
+        self.findUser_page.switched_to_UserManager.connect(self.show_user_manager)  # 查找用户界面切换到用户管理界面
+        self.changeUser_page.switched_to_UserManager.connect(self.show_user_manager)  # 修改用户界面切换到用户管理界面
 
         # 切换到学生管理界面
-        self.main_function_page.switched_to_studentsmanager.connect(self.show_studentsManager)     # 主界面切换到学生管理界面
+        self.main_function_page.switched_to_studentsmanager.connect(self.show_studentsManager)  # 主界面切换到学生管理界面
         self.studentsManager_page.switched_to_main_function_page.connect(self.show_main_function)  # 学生管理界面切换到主功能界面
-        self.studentsManager_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)  # 学生管理界面切换到学生基本信息管理界面
-        self.studentsBasicManager_page.switched_to_student_manager_page.connect(self.show_studentsManager)  # 学生基本信息管理界面切换到学生管理界面
-        self.studentsBasicManager_page.switched_to_student_add_page.connect(self.show_studentAddSingle1_page)  # 学生基本信息管理界面切换到学生基本信息添加界面
+        self.studentsManager_page.switched_to_students_basic_info_page.connect(
+            self.show_studentsBasicManager_page)  # 学生管理界面切换到学生基本信息管理界面
+        self.studentsBasicManager_page.switched_to_student_manager_page.connect(
+            self.show_studentsManager)  # 学生基本信息管理界面切换到学生管理界面
+        self.studentsBasicManager_page.switched_to_student_add_page.connect(
+            self.show_studentAddSingle1_page)  # 学生基本信息管理界面切换到学生基本信息添加界面
         self.studentAddSingle1_page.switched_to_student_add_single2_page.connect(self.show_studentAddSingle2_page)
         self.studentAddSingle1_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
         self.studentAddSingle2_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
+        self.studentAddSingle1_page.send_data.connect(self.studentAddSingle2_page.receive_data)
 
         # 设置初始界面
         self.stacked_widget.setCurrentWidget(self.login_page)
-
 
     def show_main_function(self):
         self.stacked_widget.setCurrentWidget(self.main_function_page)
@@ -116,4 +120,3 @@ class Ui_MainWindow(QMainWindow):
 
     def show_studentAddSingle2_page(self):
         self.stacked_widget.setCurrentWidget(self.studentAddSingle2_page)
-

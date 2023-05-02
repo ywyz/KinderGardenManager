@@ -16,9 +16,12 @@ from Function.StudentsManager import StudentsManager
 class Ui_StudentAddSingle1(QtWidgets.QWidget):
     switched_to_students_basic_info_page = pyqtSignal()
     switched_to_student_add_single2_page = pyqtSignal()
+    send_data = pyqtSignal(list)
 
     def __init__(self):
         super().__init__()
+        self.lists = None
+        self.stu = None
         self.setupUi(self)
 
     def setupUi(self, Form):
@@ -360,7 +363,12 @@ class Ui_StudentAddSingle1(QtWidgets.QWidget):
         self.switched_to_students_basic_info_page.emit()
 
     def submit(self):
-        self.switch_to_student_add_single2_page()
+        if self.check_input():
+            self.add_list()
+            self.send_data_slot()
+            self.switch_to_student_add_single2_page()
+        else:
+            pass
 
     def switch_to_student_add_single2_page(self):
         self.switched_to_student_add_single2_page.emit()
@@ -368,10 +376,66 @@ class Ui_StudentAddSingle1(QtWidgets.QWidget):
     def check_IDNum(self):
         if self.comboBox_13.currentIndex() != 0:
             pass
-        stu = StudentsManager()
-        if stu.checkID(self.lineEdit_2.text()):
-            birthdate = stu.getBirthDate(self.lineEdit_2.text())
+        self.stu = StudentsManager()
+        if self.stu.checkID(self.lineEdit_2.text()):
+            birthdate = self.stu.getBirthDate(self.lineEdit_2.text())
             self.dateEdit.setDate(QtCore.QDate(int(birthdate[0:4]), int(birthdate[4:6]), int(birthdate[6:8])))
-            self.comboBox_3.setCurrentIndex(stu.getSex(self.lineEdit_2.text()))
+            self.comboBox_3.setCurrentIndex(self.stu.getSex(self.lineEdit_2.text()))
         else:
             QtWidgets.QMessageBox.information(self, "提示", "身份证号码有误，请检查后再提交！")
+
+    def check_input(self):
+        if self.lineEdit.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿姓名！")
+            return False
+        if self.lineEdit_2.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿身份证号码！")
+            return False
+        if self.lineEdit_3.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿户口所在地！")
+            return False
+        if self.lineEdit_4.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿现住址！")
+            return False
+        if self.lineEdit_5.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿出生地！")
+            return False
+        if self.lineEdit_6.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿国籍！")
+            return False
+        if self.lineEdit_7.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿班级！")
+            return False
+        if self.lineEdit_10.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入幼儿民族！")
+            return False
+
+        return True
+
+    def add_list(self):
+        self.lists = []
+        self.lists.append(self.lineEdit.text())
+        self.lists.append(self.comboBox_13.currentText())
+        self.lists.append(self.lineEdit_2.text())
+        self.lists.append(self.lineEdit_3.text())
+        self.lists.append(self.lineEdit_4.text())
+        self.lists.append(self.lineEdit_5.text())
+        self.lists.append(self.lineEdit_6.text())
+        self.lists.append(self.lineEdit_7.text())
+        self.lists.append(self.lineEdit_10.text())
+        self.lists.append(self.comboBox_3.currentText())
+        self.lists.append(self.comboBox_4.currentText())
+        self.lists.append(self.comboBox_5.currentText())
+        self.lists.append(self.comboBox_6.currentText())
+        self.lists.append(self.comboBox_7.currentText())
+        self.lists.append(self.comboBox_8.currentText())
+        self.lists.append(self.comboBox_9.currentText())
+        self.lists.append(self.comboBox_10.currentText())
+        self.lists.append(self.comboBox_11.currentText())
+        self.lists.append(self.comboBox_13.currentText())
+        self.lists.append(self.comboBox_14.currentText())
+        self.lists.append(self.dateEdit.text())
+        self.lists.append(self.dateEdit_2.text())
+
+    def send_data_slot(self):
+        self.send_data.emit(self.lists)

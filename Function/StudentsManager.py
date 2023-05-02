@@ -1,8 +1,12 @@
 from Function.SQLConnect import SQLConnect
 
 
+
+
+
 class StudentsManager:
     def __init__(self):
+        self.lists = None
         self.db = SQLConnect().connect()
         self.cursor = self.db.cursor()
 
@@ -48,11 +52,20 @@ class StudentsManager:
         # 如果所有检查都通过了，那么身份证号码的格式是正确的
         return True
 
-    def getBirthDate(self, id_number):
-        return id_number[6:14]
-
-    def getSex(self,id_number):
+    def getSex(self, id_number):
         if int(id_number[16]) % 2 == 0:
             return 1
         else:
             return 0
+
+    def getBirthDate(self,id_number):
+        return id_number[6:14]
+
+    def get_list1(self, list1):
+        self.lists = []
+        for i in list1:
+            self.lists.append(i[0])
+
+    def get_list2(self, list2):
+        for i in list2:
+            self.lists.append(i[1])

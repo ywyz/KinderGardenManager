@@ -9,11 +9,15 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import pyqtSignal
 
+from Function.StudentsManager import StudentsManager
+
 
 class Ui_StudentAddSingle2(QtWidgets.QWidget):
     switched_to_students_basic_info_page = pyqtSignal()
+
     def __init__(self):
         super().__init__()
+        self.lists = None
         self.setupUi(self)
 
     def setupUi(self, Form):
@@ -188,7 +192,9 @@ class Ui_StudentAddSingle2(QtWidgets.QWidget):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.pushButton.clicked.connect(self.submit)
         self.pushButton_2.clicked.connect(self.switch_to_students_basic_info_page)
+        self.lineEdit_2.editingFinished.connect(self.check_IDNum)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -236,3 +242,64 @@ class Ui_StudentAddSingle2(QtWidgets.QWidget):
     def switch_to_students_basic_info_page(self):
         self.switched_to_students_basic_info_page.emit()
 
+    def receive_data(self, data):
+        self.lists = data
+
+    def check_IDNum(self):
+        if self.comboBox.currentIndex() != 0:
+            pass
+        self.stu = StudentsManager()
+        if self.stu.checkID(self.lineEdit_2.text()):
+            birthdate = self.stu.getBirthDate(self.lineEdit_2.text())
+            self.dateEdit.setDate(QtCore.QDate(int(birthdate[0:4]), int(birthdate[4:6]), int(birthdate[6:8])))
+            self.comboBox_3.setCurrentIndex(self.stu.getSex(self.lineEdit_2.text()))
+        else:
+            QtWidgets.QMessageBox.information(self, "提示", "身份证号码有误，请检查后再提交！")
+
+    def check_input(self):
+        if self.lineEdit.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人姓名！")
+            return False
+        if self.lineEdit_2.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人身份证号码！")
+            return False
+        if self.lineEdit_3.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人联系地址！")
+            return False
+        if self.lineEdit_4.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人联系电话！")
+            return False
+        if self.lineEdit_5.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人工作单位！")
+            return False
+        if self.lineEdit_6.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人国籍！")
+            return False
+        if self.lineEdit_7.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人职务！")
+            return False
+        if self.lineEdit_10.text() == "":
+            QtWidgets.QMessageBox.information(self, "提示", "请输入监护人民族！")
+            return False
+
+        return True
+
+    def add_list(self):
+        self.lists.append(self.lineEdit.text())
+        self.lists.append(self.comboBox.currentText())
+        self.lists.append(self.lineEdit_2.text())
+        self.lists.append(self.dateEdit.text())
+        self.lists.append(self.comboBox_3.currentText())
+        self.lists.append(self.comboBox_2.currentText())
+        self.lists.append(self.comboBox_4.currentText())
+        self.lists.append(self.lineEdit_3.text())
+        self.lists.append(self.lineEdit_4.text())
+        self.lists.append(self.lineEdit_5.text())
+        self.lists.append(self.lineEdit_6.text())
+        self.lists.append(self.lineEdit_7.text())
+        self.lists.append(self.lineEdit_10.text())
+
+    def submit(self):
+        self.add_list()
+        QtWidgets.QMessageBox.information(self, "提示", "提交成功！")
+        print(self.lists)
