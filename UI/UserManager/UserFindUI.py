@@ -29,15 +29,15 @@ class Ui_FindUser(QtWidgets.QWidget):
         :return:
         """
         UserFind.setObjectName("UserFind")
-        UserFind.resize(1920, 1080)
+        UserFind.resize(1280, 720)
         self.tableWidget = QtWidgets.QTableWidget(parent=UserFind)
-        self.tableWidget.setGeometry(QtCore.QRect(400, 100, 800, 400))
+        self.tableWidget.setGeometry(QtCore.QRect(300, 180, 600, 300))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
 
         self.pushButton_2 = QtWidgets.QPushButton(parent=UserFind)
-        self.pushButton_2.setGeometry(QtCore.QRect(680, 700, 141, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(600, 600, 230, 70))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_2.clicked.connect(self.switch_to_UserManager)
 
@@ -49,6 +49,11 @@ class Ui_FindUser(QtWidgets.QWidget):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.pushButton_2.setText(_translate("Form", "返回"))
+        font = QtGui.QFont()
+        font.setFamily("Adobe 黑体 Std R")
+        font.setPointSize(12)
+        self.pushButton_2.setFont(font)
+
 
     def show_data(self):
         """

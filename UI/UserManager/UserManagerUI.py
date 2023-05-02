@@ -9,7 +9,7 @@
 用户管理界面,包括主界面，添加用户界面，删除用户界面，查找用户界面
 """
 
-from PyQt6 import QtCore, QtWidgets
+from PyQt6 import QtCore, QtWidgets, QtGui
 
 
 class Ui_UserManager(QtWidgets.QWidget):
@@ -25,16 +25,16 @@ class Ui_UserManager(QtWidgets.QWidget):
         UserManager.setObjectName("UserManager")
         UserManager.resize(1920, 1080 )
         self.pushButton = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton.setGeometry(QtCore.QRect(480, 200, 151, 71))
+        self.pushButton.setGeometry(QtCore.QRect(400, 270, 151, 71))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton_2.setGeometry(QtCore.QRect(800, 200, 151, 71))
+        self.pushButton_2.setGeometry(QtCore.QRect(700, 270, 151, 71))
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton_3.setGeometry(QtCore.QRect(480, 370, 151, 71))
+        self.pushButton_3.setGeometry(QtCore.QRect(400, 360, 151, 71))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(parent=UserManager)
-        self.pushButton_4.setGeometry(QtCore.QRect(800, 370, 151, 71))
+        self.pushButton_4.setGeometry(QtCore.QRect(700, 360, 151, 71))
         self.pushButton_4.setObjectName("pushButton_4")
 
         self.retranslateUi(UserManager)
@@ -51,6 +51,14 @@ class Ui_UserManager(QtWidgets.QWidget):
         self.pushButton_2.setText(_translate("UserManager", "查找账号"))
         self.pushButton_3.setText(_translate("UserManager", "修改账号"))
         self.pushButton_4.setText(_translate("UserManager", "返回"))
+        font = QtGui.QFont()
+        font.setFamily("Adobe 黑体 Std R")
+        font.setPointSize(12)
+        self.pushButton.setFont(font)
+        self.pushButton_2.setFont(font)
+        self.pushButton_3.setFont(font)
+        self.pushButton_4.setFont(font)
+
 
     def addUser(self):
         self.switched_to_addUser.emit()

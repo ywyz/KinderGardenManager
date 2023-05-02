@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>240</y>
-     <width>231</width>
+     <x>400</x>
+     <y>180</y>
+     <width>230</width>
      <height>71</height>
     </rect>
    </property>
@@ -29,14 +29,14 @@
     </font>
    </property>
    <property name="text">
-    <string>查看单个幼儿信息</string>
+    <string>查看单名幼儿信息</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>500</y>
+     <x>400</x>
+     <y>360</y>
      <width>231</width>
      <height>71</height>
     </rect>
@@ -54,8 +54,8 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>1090</x>
-     <y>240</y>
+     <x>700</x>
+     <y>180</y>
      <width>231</width>
      <height>71</height>
     </rect>
@@ -67,14 +67,14 @@
     </font>
    </property>
    <property name="text">
-    <string>新增单个幼儿</string>
+    <string>新增单名幼儿</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>650</y>
+     <x>540</x>
+     <y>540</y>
      <width>231</width>
      <height>71</height>
     </rect>
@@ -92,8 +92,8 @@
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>370</y>
+     <x>400</x>
+     <y>270</y>
      <width>231</width>
      <height>71</height>
     </rect>
@@ -111,8 +111,8 @@
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>1090</x>
-     <y>370</y>
+     <x>700</x>
+     <y>270</y>
      <width>231</width>
      <height>71</height>
     </rect>
@@ -130,8 +130,8 @@
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
-     <x>1090</x>
-     <y>490</y>
+     <x>700</x>
+     <y>360</y>
      <width>231</width>
      <height>71</height>
     </rect>
@@ -143,7 +143,7 @@
     </font>
    </property>
    <property name="text">
-    <string>删除单名幼儿</string>
+    <string>删除多名幼儿</string>
    </property>
   </widget>
  </widget>

@@ -1,4 +1,4 @@
-from PyQt6 import QtWidgets, QtCore
+from PyQt6 import QtWidgets, QtCore, QtGui
 
 from Function.UserManager import UserManager
 
@@ -12,34 +12,34 @@ class Ui_AddUser(QtWidgets.QWidget):
 
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1920, 1080)
+        Form.resize(1280, 720)
         self.label = QtWidgets.QLabel(parent=Form)
-        self.label.setGeometry(QtCore.QRect(520, 240, 71, 31))
+        self.label.setGeometry(QtCore.QRect(520, 180, 61, 21))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(parent=Form)
-        self.label_2.setGeometry(QtCore.QRect(520, 350, 71, 31))
+        self.label_2.setGeometry(QtCore.QRect(520, 270, 61, 21))
         self.label_2.setObjectName("label_2")
         self.comboBox = QtWidgets.QComboBox(parent=Form)
-        self.comboBox.setGeometry(QtCore.QRect(660, 470, 131, 31))
+        self.comboBox.setGeometry(QtCore.QRect(660, 360, 131, 31))
         self.comboBox.setEditable(True)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.label_3 = QtWidgets.QLabel(parent=Form)
-        self.label_3.setGeometry(QtCore.QRect(520, 470, 71, 31))
+        self.label_3.setGeometry(QtCore.QRect(520, 360, 71, 31))
         self.label_3.setObjectName("label_3")
         self.lineEdit = QtWidgets.QLineEdit(parent=Form)
-        self.lineEdit.setGeometry(QtCore.QRect(660, 240, 171, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(660, 180, 171, 31))
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(parent=Form)
-        self.lineEdit_2.setGeometry(QtCore.QRect(660, 340, 171, 31))
+        self.lineEdit_2.setGeometry(QtCore.QRect(660, 240, 171, 31))
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.pushButton = QtWidgets.QPushButton(parent=Form)
-        self.pushButton.setGeometry(QtCore.QRect(590, 610, 141, 51))
+        self.pushButton.setGeometry(QtCore.QRect(400, 540, 230, 70))
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_2.setGeometry(QtCore.QRect(590, 650, 141, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(700, 540, 230, 70))
         self.pushButton_2.setObjectName("pushButton")
         self.pushButton_2.clicked.connect(self.switch_to_UserManager)
         self.pushButton.clicked.connect(self.add_user)
@@ -61,6 +61,16 @@ class Ui_AddUser(QtWidgets.QWidget):
             _translate("Form", "<html><head/><body><p><span style=\" font-size:12pt;\">权限</span></p></body></html>"))
         self.pushButton.setText(_translate("Form", "提交"))
         self.pushButton_2.setText(_translate("Form", "返回"))
+        font = QtGui.QFont()
+        font.setFamily("Adobe 黑体 Std R")
+        font.setPointSize(12)
+        self.label.setFont(font)
+        self.label_2.setFont(font)
+        self.label_3.setFont(font)
+        self.pushButton.setFont(font)
+        self.pushButton_2.setFont(font)
+
+
 
     def add_user(self):
         username = self.lineEdit.text()
