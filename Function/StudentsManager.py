@@ -7,8 +7,7 @@ from Function.SQLConnect import SQLConnect
 class StudentsManager:
     def __init__(self):
         self.lists = None
-        self.db = SQLConnect().connect()
-        self.cursor = self.db.cursor()
+        self.sql = SQLConnect()
 
     def checkID(self, id_number):
         if len(id_number) != 18:
@@ -69,3 +68,9 @@ class StudentsManager:
     def get_list2(self, list2):
         for i in list2:
             self.lists.append(i[1])
+
+    def submit_data(self, lists):
+        if self.sql.commit_students_info(lists):
+            return True
+        else:
+            return False

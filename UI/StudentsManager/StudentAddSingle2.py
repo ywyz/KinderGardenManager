@@ -286,20 +286,22 @@ class Ui_StudentAddSingle2(QtWidgets.QWidget):
 
     def add_list(self):
         self.lists.append(self.lineEdit.text())
-        self.lists.append(self.comboBox.currentText())
+        self.lists.append(self.comboBox_2.currentIndex())
+        self.lists.append(self.comboBox.currentIndex())
         self.lists.append(self.lineEdit_2.text())
         self.lists.append(self.dateEdit.text())
-        self.lists.append(self.comboBox_3.currentText())
-        self.lists.append(self.comboBox_2.currentText())
-        self.lists.append(self.comboBox_4.currentText())
+        self.lists.append(self.comboBox_3.currentIndex())
+        self.lists.append(self.comboBox_4.currentIndex())
         self.lists.append(self.lineEdit_3.text())
-        self.lists.append(self.lineEdit_4.text())
         self.lists.append(self.lineEdit_5.text())
-        self.lists.append(self.lineEdit_6.text())
         self.lists.append(self.lineEdit_7.text())
+        self.lists.append(self.lineEdit_6.text())
+        self.lists.append(self.lineEdit_4.text())
         self.lists.append(self.lineEdit_10.text())
 
     def submit(self):
         self.add_list()
-        QtWidgets.QMessageBox.information(self, "提示", "提交成功！")
-        print(self.lists)
+        if self.stu.submit_data(self.lists):
+            QtWidgets.QMessageBox.information(self, "提示", "提交成功！")
+        else:
+            QtWidgets.QMessageBox.information(self, "提示", "提交失败！")
