@@ -13,6 +13,7 @@ from PyQt6.QtCore import pyqtSignal
 class Ui_StudentsBasicManager(QtWidgets.QWidget):
     switched_to_student_manager_page = pyqtSignal()
     switched_to_student_add_page = pyqtSignal()
+    switched_to_student_add_many_page = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -75,6 +76,7 @@ class Ui_StudentsBasicManager(QtWidgets.QWidget):
         QtCore.QMetaObject.connectSlotsByName(Form)
         self.pushButton_3.clicked.connect(self.switch_to_student_add_page)
         self.pushButton_4.clicked.connect(self.switch_to_student_manager_page)
+        self.pushButton_6.clicked.connect(self.switch_to_student_add_many_page)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -92,3 +94,6 @@ class Ui_StudentsBasicManager(QtWidgets.QWidget):
 
     def switch_to_student_add_page (self):
         self.switched_to_student_add_page.emit()
+
+    def switch_to_student_add_many_page (self):
+        self.switched_to_student_add_many_page.emit()

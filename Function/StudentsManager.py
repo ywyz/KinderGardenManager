@@ -1,7 +1,7 @@
+import datetime
+
 from Function.SQLConnect import SQLConnect
-
-
-
+from openpyxl import load_workbook
 
 
 class StudentsManager:
@@ -74,3 +74,20 @@ class StudentsManager:
             return True
         else:
             return False
+
+    def load_data(self, filename):
+        load_workbook(filename)
+        wb = load_workbook(filename)
+        ws = wb.active
+        list1 = []
+        for row in ws.iter_rows(min_row=2, max_col=ws.max_column, max_row=ws.max_row):
+            for cell in row:
+                if cell.value is None:
+                    return True
+                list1.append(cell.value)
+            print(list1)
+            if self.submit_data(list1):
+                list1.clear()
+            else:
+                return False
+        return True

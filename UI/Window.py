@@ -20,6 +20,7 @@ from UI.StudentsManager.StudentsManager import Ui_StudentsManager
 from UI.StudentsManager.StudentsBasicSystem import Ui_StudentsBasicManager
 from UI.StudentsManager.StudentAddSingle1 import Ui_StudentAddSingle1
 from UI.StudentsManager.StudentAddSingle2 import Ui_StudentAddSingle2
+from UI.StudentsManager.StudentAddMany import Ui_StudentAddMany
 
 
 class Ui_MainWindow(QMainWindow):
@@ -51,6 +52,7 @@ class Ui_MainWindow(QMainWindow):
         self.studentsBasicManager_page = Ui_StudentsBasicManager()  # 学生基本信息管理界面
         self.studentAddSingle1_page = Ui_StudentAddSingle1()  # 学生基本信息添加界面1
         self.studentAddSingle2_page = Ui_StudentAddSingle2()  # 学生基本信息添加界面2
+        self.studentAddMany_page = Ui_StudentAddMany()            # 学生基本信息导入
 
         # 将所有界面添加到QStackedWidget中
         self.stacked_widget.addWidget(self.login_page)
@@ -63,6 +65,7 @@ class Ui_MainWindow(QMainWindow):
         self.stacked_widget.addWidget(self.studentsBasicManager_page)
         self.stacked_widget.addWidget(self.studentAddSingle1_page)
         self.stacked_widget.addWidget(self.studentAddSingle2_page)
+        self.stacked_widget.addWidget(self.studentAddMany_page)
 
         # 信号与槽
         self.login_page.login_success.connect(self.show_main_function)  # 登录成功，切换到主功能界面
@@ -90,6 +93,9 @@ class Ui_MainWindow(QMainWindow):
         self.studentAddSingle1_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
         self.studentAddSingle2_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
         self.studentAddSingle1_page.send_data.connect(self.studentAddSingle2_page.receive_data)
+        self.studentAddMany_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
+        self.studentsBasicManager_page.switched_to_student_add_many_page.connect(self.show_studentAddMany_page)
+
 
         # 设置初始界面
         self.stacked_widget.setCurrentWidget(self.login_page)
@@ -120,3 +126,6 @@ class Ui_MainWindow(QMainWindow):
 
     def show_studentAddSingle2_page(self):
         self.stacked_widget.setCurrentWidget(self.studentAddSingle2_page)
+
+    def show_studentAddMany_page(self):
+        self.stacked_widget.setCurrentWidget(self.studentAddMany_page)

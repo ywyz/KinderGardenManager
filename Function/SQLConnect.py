@@ -8,10 +8,10 @@ import pymysql
 class SQLConnect:
     def __init__(self):
         self.db = pymysql.connect(host='sh-cynosdbmysql-grp-lhkebs8k.sql.tencentcdb.com',
-                                  user='ywyz',
-                                  password='YUEwei980924',
-                                  database='KinderGarten',
-                                  port=21651)
+                                  user='',
+                                  password='',
+                                  database='',
+                                  port=0)
 
     def connect(self):
         return self.db
@@ -20,6 +20,8 @@ class SQLConnect:
         self.db.close()
 
     def commit_students_info(self, lists):
+        if not lists:
+            return True
         cursor = self.db.cursor()
         sql_commit = "INSERT INTO StudentsBasicInfo (StudentName, StudentIDNum, PlaceOfAccount, \
                         PlaceOfCurrent, PlaceOfBirth, Nationality, Class, EthnicGroup, Sex, IsHKMcTW, IsOnlyChild, \
@@ -73,11 +75,9 @@ class SQLConnect:
                         Telephone, GuardianGroup))
         try:
             self.db.commit()
-            self.db.close()
             return True
         except:
             self.db.rollback()
-            self.db.close()
             return False
 
 # Path: Function\StudentsManager.py
