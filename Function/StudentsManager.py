@@ -57,7 +57,7 @@ class StudentsManager:
         else:
             return 0
 
-    def getBirthDate(self,id_number):
+    def getBirthDate(self, id_number):
         return id_number[6:14]
 
     def get_list1(self, list1):
@@ -76,7 +76,6 @@ class StudentsManager:
             return False
 
     def load_data(self, filename):
-        load_workbook(filename)
         wb = load_workbook(filename)
         ws = wb.active
         list1 = []
@@ -85,9 +84,19 @@ class StudentsManager:
                 if cell.value is None:
                     return True
                 list1.append(cell.value)
-            print(list1)
+                print(list1)
+                if not list1:
+                    continue
             if self.submit_data(list1):
                 list1.clear()
             else:
                 return False
         return True
+
+    def get_students_info(self):
+        db = self.sql.connect()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM StudentsBasicInfo")
+        rows = cursor.fetchall()
+        db.close()
+        return rows

@@ -7,11 +7,7 @@ import pymysql
 
 class SQLConnect:
     def __init__(self):
-        self.db = pymysql.connect(host='sh-cynosdbmysql-grp-lhkebs8k.sql.tencentcdb.com',
-                                  user='',
-                                  password='',
-                                  database='',
-                                  port=0)
+        self.db = pymysql.connect()
 
     def connect(self):
         return self.db
@@ -20,8 +16,8 @@ class SQLConnect:
         self.db.close()
 
     def commit_students_info(self, lists):
-        if not lists:
-            return True
+        if lists is None:
+            pass
         cursor = self.db.cursor()
         sql_commit = "INSERT INTO StudentsBasicInfo (StudentName, StudentIDNum, PlaceOfAccount, \
                         PlaceOfCurrent, PlaceOfBirth, Nationality, Class, EthnicGroup, Sex, IsHKMcTW, IsOnlyChild, \
@@ -79,5 +75,6 @@ class SQLConnect:
         except:
             self.db.rollback()
             return False
+
 
 # Path: Function\StudentsManager.py
