@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1280</width>
-    <height>720</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>180</y>
-     <width>230</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>查看单名幼儿信息</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>360</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>删除单名幼儿</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>180</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>新增单名幼儿</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>540</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>返回</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>270</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>查看班级所有幼儿信息</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>270</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>新增多名幼儿信息</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_7">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>360</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>删除多名幼儿</string>
-   </property>
-  </widget>
- </widget>
- <resources/>
- <connections/>
+    <class>Form</class>
+    <widget class="QWidget" name="Form">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1280</width>
+                <height>720</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <widget class="QPushButton" name="pushButton">
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>180</y>
+                    <width>230</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>查看单名幼儿信息</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>360</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>删除单名幼儿</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_3">
+            <property name="geometry">
+                <rect>
+                    <x>700</x>
+                    <y>180</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>新增单名幼儿</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_4">
+            <property name="geometry">
+                <rect>
+                    <x>540</x>
+                    <y>540</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>返回</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_5">
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>270</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>查看班级所有幼儿信息</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_6">
+            <property name="geometry">
+                <rect>
+                    <x>700</x>
+                    <y>270</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>新增多名幼儿信息</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_7">
+            <property name="geometry">
+                <rect>
+                    <x>700</x>
+                    <y>360</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>删除多名幼儿</string>
+            </property>
+        </widget>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

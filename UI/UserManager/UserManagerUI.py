@@ -17,13 +17,14 @@ class Ui_UserManager(QtWidgets.QWidget):
     switched_to_changeUser = QtCore.pyqtSignal()
     switched_to_menu = QtCore.pyqtSignal()
     switched_to_findUser = QtCore.pyqtSignal()
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
     def setupUi(self, UserManager):
         UserManager.setObjectName("UserManager")
-        UserManager.resize(1920, 1080 )
+        UserManager.resize(1920, 1080)
         self.pushButton = QtWidgets.QPushButton(parent=UserManager)
         self.pushButton.setGeometry(QtCore.QRect(400, 270, 151, 71))
         self.pushButton.setObjectName("pushButton")
@@ -59,7 +60,6 @@ class Ui_UserManager(QtWidgets.QWidget):
         self.pushButton_3.setFont(font)
         self.pushButton_4.setFont(font)
 
-
     def addUser(self):
         self.switched_to_addUser.emit()
 
@@ -71,5 +71,3 @@ class Ui_UserManager(QtWidgets.QWidget):
 
     def findUser(self):
         self.switched_to_findUser.emit()
-
-

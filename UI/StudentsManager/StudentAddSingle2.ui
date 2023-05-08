@@ -1,550 +1,550 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1280</width>
-    <height>720</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>600</y>
-     <width>230</width>
-     <height>70</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>提交</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>600</y>
-     <width>230</width>
-     <height>70</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>返回</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>185</x>
-     <y>110</y>
-     <width>111</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人姓名</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>100</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>235</y>
-     <width>151</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人证件号码</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>230</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>162</x>
-     <y>170</y>
-     <width>181</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人证件类型</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>170</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>居民身份证</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>香港特区护照/身份证明</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>澳门特区护照/身份证明</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>台湾居民来往大陆通行证</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>境外永久居住证</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>其他</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>300</y>
-     <width>111</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人关系</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_2">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>290</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>父亲</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>母亲</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>继父或养父</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>继母或养母</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>祖父</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>祖母</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>外祖父</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>外祖母</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>哥哥</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>姐姐</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>其他亲属</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>非亲属</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>360</y>
-     <width>161</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人联系地址</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>350</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>163</x>
-     <y>415</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人联系电话</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>410</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>270</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人国籍</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_6">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>250</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>中国</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_3">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>110</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>男</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>女</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>110</y>
-     <width>171</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人性别</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>170</y>
-     <width>151</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人出生日期</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>220</y>
-     <width>111</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人民族</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_13">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>470</y>
-     <width>201</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人是否法定监护人</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_10">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>210</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>汉族</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox_4">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>470</y>
-     <width>171</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <item>
-    <property name="text">
-     <string>是</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>否</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QDateEdit" name="dateEdit">
-   <property name="geometry">
-    <rect>
-     <x>730</x>
-     <y>160</y>
-     <width>201</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_5">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>310</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>570</x>
-     <y>320</y>
-     <width>161</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人工作单位</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>600</x>
-     <y>380</y>
-     <width>161</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Adobe 黑体 Std R</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>第一监护人职务</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_7">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>370</y>
-     <width>211</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
- </widget>
- <resources/>
- <connections/>
+    <class>Form</class>
+    <widget class="QWidget" name="Form">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1280</width>
+                <height>720</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <widget class="QPushButton" name="pushButton">
+            <property name="geometry">
+                <rect>
+                    <x>400</x>
+                    <y>600</y>
+                    <width>230</width>
+                    <height>70</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>提交</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+            <property name="geometry">
+                <rect>
+                    <x>700</x>
+                    <y>600</y>
+                    <width>230</width>
+                    <height>70</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>返回</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label">
+            <property name="geometry">
+                <rect>
+                    <x>185</x>
+                    <y>110</y>
+                    <width>111</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人姓名</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit">
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>100</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>235</y>
+                    <width>151</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人证件号码</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_2">
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>230</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_3">
+            <property name="geometry">
+                <rect>
+                    <x>162</x>
+                    <y>170</y>
+                    <width>181</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人证件类型</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox">
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>170</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <item>
+                <property name="text">
+                    <string>居民身份证</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>香港特区护照/身份证明</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>澳门特区护照/身份证明</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>台湾居民来往大陆通行证</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>境外永久居住证</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>其他</string>
+                </property>
+            </item>
+        </widget>
+        <widget class="QLabel" name="label_4">
+            <property name="geometry">
+                <rect>
+                    <x>190</x>
+                    <y>300</y>
+                    <width>111</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人关系</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_2">
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>290</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <item>
+                <property name="text">
+                    <string>父亲</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>母亲</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>继父或养父</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>继母或养母</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>祖父</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>祖母</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>外祖父</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>外祖母</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>哥哥</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>姐姐</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>其他亲属</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>非亲属</string>
+                </property>
+            </item>
+        </widget>
+        <widget class="QLabel" name="label_5">
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>360</y>
+                    <width>161</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人联系地址</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_3">
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>350</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+            <property name="geometry">
+                <rect>
+                    <x>163</x>
+                    <y>415</y>
+                    <width>151</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人联系电话</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_4">
+            <property name="geometry">
+                <rect>
+                    <x>330</x>
+                    <y>410</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_8">
+            <property name="geometry">
+                <rect>
+                    <x>600</x>
+                    <y>270</y>
+                    <width>121</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人国籍</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_6">
+            <property name="geometry">
+                <rect>
+                    <x>720</x>
+                    <y>250</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>中国</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_3">
+            <property name="geometry">
+                <rect>
+                    <x>720</x>
+                    <y>110</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <item>
+                <property name="text">
+                    <string>男</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>女</string>
+                </property>
+            </item>
+        </widget>
+        <widget class="QLabel" name="label_10">
+            <property name="geometry">
+                <rect>
+                    <x>590</x>
+                    <y>110</y>
+                    <width>171</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人性别</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_11">
+            <property name="geometry">
+                <rect>
+                    <x>560</x>
+                    <y>170</y>
+                    <width>151</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人出生日期</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+            <property name="geometry">
+                <rect>
+                    <x>600</x>
+                    <y>220</y>
+                    <width>111</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人民族</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_13">
+            <property name="geometry">
+                <rect>
+                    <x>160</x>
+                    <y>470</y>
+                    <width>201</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人是否法定监护人</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_10">
+            <property name="geometry">
+                <rect>
+                    <x>720</x>
+                    <y>210</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>汉族</string>
+            </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_4">
+            <property name="geometry">
+                <rect>
+                    <x>370</x>
+                    <y>470</y>
+                    <width>171</width>
+                    <height>31</height>
+                </rect>
+            </property>
+            <item>
+                <property name="text">
+                    <string>是</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>否</string>
+                </property>
+            </item>
+        </widget>
+        <widget class="QDateEdit" name="dateEdit">
+            <property name="geometry">
+                <rect>
+                    <x>730</x>
+                    <y>160</y>
+                    <width>201</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_5">
+            <property name="geometry">
+                <rect>
+                    <x>720</x>
+                    <y>310</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+            <property name="geometry">
+                <rect>
+                    <x>570</x>
+                    <y>320</y>
+                    <width>161</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人工作单位</string>
+            </property>
+        </widget>
+        <widget class="QLabel" name="label_12">
+            <property name="geometry">
+                <rect>
+                    <x>600</x>
+                    <y>380</y>
+                    <width>161</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <family>Adobe 黑体 Std R</family>
+                    <pointsize>12</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>第一监护人职务</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_7">
+            <property name="geometry">
+                <rect>
+                    <x>720</x>
+                    <y>370</y>
+                    <width>211</width>
+                    <height>31</height>
+                </rect>
+            </property>
+        </widget>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

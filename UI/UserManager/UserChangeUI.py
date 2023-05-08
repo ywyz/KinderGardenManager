@@ -9,6 +9,7 @@
 """
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+
 from Function.UserManager import UserManager
 
 switched_to_UserManager = QtCore.pyqtSignal()
@@ -18,7 +19,7 @@ class Ui_ChangeUser(QtWidgets.QWidget):
     """
     修改用户信息界面
     """
-    switched_to_UserManager = QtCore.pyqtSignal()                   # 切换到用户管理界面
+    switched_to_UserManager = QtCore.pyqtSignal()  # 切换到用户管理界面
 
     def __init__(self):
         super().__init__()
@@ -26,7 +27,7 @@ class Ui_ChangeUser(QtWidgets.QWidget):
 
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1280,720)
+        Form.resize(1280, 720)
         self.lineEdit = QtWidgets.QLineEdit(parent=Form)
         self.lineEdit.setGeometry(QtCore.QRect(660, 180, 211, 41))
         self.lineEdit.setObjectName("lineEdit")
@@ -142,7 +143,3 @@ class Ui_ChangeUser(QtWidgets.QWidget):
             QtWidgets.QMessageBox.information(self, '提示', '修改成功')
         else:
             QtWidgets.QMessageBox.information(self, '提示', '修改失败')
-
-
-
-

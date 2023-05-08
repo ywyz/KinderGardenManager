@@ -70,8 +70,6 @@ class Ui_AddUser(QtWidgets.QWidget):
         self.pushButton.setFont(font)
         self.pushButton_2.setFont(font)
 
-
-
     def add_user(self):
         username = self.lineEdit.text()
         password = self.lineEdit_2.text()

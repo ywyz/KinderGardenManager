@@ -1,7 +1,6 @@
-import datetime
+from openpyxl import load_workbook
 
 from Function.SQLConnect import SQLConnect
-from openpyxl import load_workbook
 
 
 class StudentsManager:
@@ -97,6 +96,42 @@ class StudentsManager:
         db = self.sql.connect()
         cursor = db.cursor()
         cursor.execute("SELECT * FROM StudentsBasicInfo")
+        rows = cursor.fetchall()
+        db.close()
+        return rows
+
+    def del_stu_info(self, name):
+        db = self.sql.connect()
+        cursor = db.cursor()
+        cursor.execute("DELETE FROM StudentsBasicInfo WHERE StudentName = '%s'" % name)
+        try:
+            db.commit()
+            db.close()
+            return True  # 删除成功
+        except:
+            db.rollback()
+            db.close()
+            return False
+
+    def stu_daily_attend(self, list1):
+        db = self.sql.connect()
+        cursor = db.cursor()
+        cursor.execute("INSERT INTO StudentsDailyAttendtion (date, name, class, isill, reason, contacter) "
+                       "VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" % (list1[0], list1[1], list1[2], list1[3],
+                                                                        list1[4], list1[5]))
+        try:
+            db.commit()
+            db.close()
+            return True
+        except:
+            db.rollback()
+            db.close()
+            return False
+
+    def get_stu_daily_attend(self):
+        db = self.sql.connect()
+        cursor = db.cursor()
+        cursor.execute("SELECT * FROM StudentsDailyAttendtion")
         rows = cursor.fetchall()
         db.close()
         return rows

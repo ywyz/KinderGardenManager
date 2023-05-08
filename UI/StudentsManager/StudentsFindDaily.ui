@@ -16,20 +16,20 @@
         <widget class="QTableWidget" name="tableWidget">
             <property name="geometry">
                 <rect>
-                    <x>10</x>
+                    <x>20</x>
                     <y>10</y>
-                    <width>1261</width>
-                    <height>641</height>
+                    <width>1241</width>
+                    <height>631</height>
                 </rect>
             </property>
         </widget>
         <widget class="QPushButton" name="pushButton">
             <property name="geometry">
                 <rect>
-                    <x>980</x>
+                    <x>940</x>
                     <y>650</y>
-                    <width>231</width>
-                    <height>71</height>
+                    <width>191</width>
+                    <height>61</height>
                 </rect>
             </property>
             <property name="font">

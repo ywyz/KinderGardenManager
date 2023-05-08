@@ -63,7 +63,6 @@ class Ui_Login(QWidget):
         self.label_3.setFont(font)
         self.pushButton.setFont(font)
 
-
     def login(self):
         """
         登录

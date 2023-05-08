@@ -15,6 +15,7 @@ class Ui_StudentsBasicManager(QtWidgets.QWidget):
     switched_to_student_add_page = pyqtSignal()
     switched_to_student_add_many_page = pyqtSignal()
     switched_to_students_find_page = pyqtSignal()
+    switched_to_students_delete_page = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -59,7 +60,7 @@ class Ui_StudentsBasicManager(QtWidgets.QWidget):
         self.pushButton_5.setFont(font)
         self.pushButton_5.setObjectName("pushButton_5")
         self.pushButton_6 = QtWidgets.QPushButton(parent=Form)
-        self.pushButton_6.setGeometry(QtCore.QRect(700,270,231, 71))
+        self.pushButton_6.setGeometry(QtCore.QRect(700, 270, 231, 71))
         font = QtGui.QFont()
         font.setFamily("Adobe 黑体 Std R")
         font.setPointSize(12)
@@ -79,6 +80,7 @@ class Ui_StudentsBasicManager(QtWidgets.QWidget):
         self.pushButton_3.clicked.connect(self.switch_to_student_add_page)
         self.pushButton_4.clicked.connect(self.switch_to_student_manager_page)
         self.pushButton_6.clicked.connect(self.switch_to_student_add_many_page)
+        self.pushButton_2.clicked.connect(self.switch_to_students_delete_page)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -102,3 +104,6 @@ class Ui_StudentsBasicManager(QtWidgets.QWidget):
 
     def switch_to_students_find_page(self):
         self.switched_to_students_find_page.emit()
+
+    def switch_to_students_delete_page(self):
+        self.switched_to_students_delete_page.emit()

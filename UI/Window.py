@@ -10,18 +10,23 @@
 """
 from PyQt6 import QtWidgets
 from PyQt6.QtWidgets import QStackedWidget, QMainWindow
-from UI.MainWidget import Ui_MainFunction
-from UI.UserManager.UserManagerUI import Ui_UserManager
-from UI.UserManager.UserAddUI import Ui_AddUser
-from UI.UserManager.UserFindUI import Ui_FindUser
-from UI.UserManager.UserChangeUI import Ui_ChangeUser
+
 from UI.Login.LoginWidget import Ui_Login
-from UI.StudentsManager.StudentsManager import Ui_StudentsManager
-from UI.StudentsManager.StudentsBasicSystem import Ui_StudentsBasicManager
+from UI.MainWidget import Ui_MainFunction
+from UI.StudentsManager.StudentAddMany import Ui_StudentAddMany
 from UI.StudentsManager.StudentAddSingle1 import Ui_StudentAddSingle1
 from UI.StudentsManager.StudentAddSingle2 import Ui_StudentAddSingle2
-from UI.StudentsManager.StudentAddMany import Ui_StudentAddMany
+from UI.StudentsManager.StudentsBasicSystem import Ui_StudentsBasicManager
+from UI.StudentsManager.StudentsDailyAttend import Ui_StudentsDailyAttend
+from UI.StudentsManager.StudentsDelete import Ui_StudentsDelete
 from UI.StudentsManager.StudentsFind import Ui_StudentsFind
+from UI.StudentsManager.StudentsManager import Ui_StudentsManager
+from UI.UserManager.UserAddUI import Ui_AddUser
+from UI.UserManager.UserChangeUI import Ui_ChangeUser
+from UI.UserManager.UserFindUI import Ui_FindUser
+from UI.UserManager.UserManagerUI import Ui_UserManager
+from UI.StudentsManager.StudentsFindDaily import Ui_StudentsFindDaily
+from UI.LibraryManager.LibraryManager import Ui_LibraryManager
 
 
 class Ui_MainWindow(QMainWindow):
@@ -53,8 +58,12 @@ class Ui_MainWindow(QMainWindow):
         self.studentsBasicManager_page = Ui_StudentsBasicManager()  # 学生基本信息管理界面
         self.studentAddSingle1_page = Ui_StudentAddSingle1()  # 学生基本信息添加界面1
         self.studentAddSingle2_page = Ui_StudentAddSingle2()  # 学生基本信息添加界面2
-        self.studentAddMany_page = Ui_StudentAddMany()            # 学生基本信息导入
+        self.studentAddMany_page = Ui_StudentAddMany()  # 学生基本信息导入
         self.studentsFind_page = Ui_StudentsFind()  # 学生基本信息查找界面
+        self.studentsDelete_page = Ui_StudentsDelete()  # 学生基本信息删除界面
+        self.studentsDailyAttend_page = Ui_StudentsDailyAttend()  # 学生日常考勤界面
+        self.studentsFindDaily_page = Ui_StudentsFindDaily()  # 学生日常考勤查找界面
+        self.BookManager_page = Ui_LibraryManager()  # 图书管理界面
 
         # 将所有界面添加到QStackedWidget中
         self.stacked_widget.addWidget(self.login_page)
@@ -69,6 +78,10 @@ class Ui_MainWindow(QMainWindow):
         self.stacked_widget.addWidget(self.studentAddSingle2_page)
         self.stacked_widget.addWidget(self.studentAddMany_page)
         self.stacked_widget.addWidget(self.studentsFind_page)
+        self.stacked_widget.addWidget(self.studentsDelete_page)
+        self.stacked_widget.addWidget(self.studentsDailyAttend_page)
+        self.stacked_widget.addWidget(self.studentsFindDaily_page)
+        self.stacked_widget.addWidget(self.BookManager_page)
 
         # 信号与槽
         self.login_page.login_success.connect(self.show_main_function)  # 登录成功，切换到主功能界面
@@ -100,6 +113,14 @@ class Ui_MainWindow(QMainWindow):
         self.studentsBasicManager_page.switched_to_student_add_many_page.connect(self.show_studentAddMany_page)
         self.studentsFind_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
         self.studentsBasicManager_page.switched_to_students_find_page.connect(self.show_studentsFind_page)
+        self.studentsDelete_page.switched_to_students_basic_info_page.connect(self.show_studentsBasicManager_page)
+        self.studentsBasicManager_page.switched_to_students_delete_page.connect(self.show_studentsDelete_page)
+        self.studentsDailyAttend_page.switched_to_student_manager_page.connect(self.show_studentsManager)
+        self.studentsManager_page.switched_to_students_daily_attend_page.connect(self.show_studentsDailyAttend_page)
+        self.studentsDailyAttend_page.switched_to_student_find_daily_page.connect(self.show_studentsFindDaily_page)
+        self.studentsFindDaily_page.switched_to_student_manager_page.connect(self.show_studentsDailyAttend_page)
+        self.main_function_page.swtiched_to_booksManager.connect(self.show_booksManager)
+        self.BookManager_page.switched_to_menu.connect(self.show_main_function)
 
 
         # 设置初始界面
@@ -137,3 +158,15 @@ class Ui_MainWindow(QMainWindow):
 
     def show_studentsFind_page(self):
         self.stacked_widget.setCurrentWidget(self.studentsFind_page)
+
+    def show_studentsDelete_page(self):
+        self.stacked_widget.setCurrentWidget(self.studentsDelete_page)
+
+    def show_studentsDailyAttend_page(self):
+        self.stacked_widget.setCurrentWidget(self.studentsDailyAttend_page)
+
+    def show_studentsFindDaily_page(self):
+        self.stacked_widget.setCurrentWidget(self.studentsFindDaily_page)
+
+    def show_booksManager(self):
+        self.stacked_widget.setCurrentWidget(self.BookManager_page)

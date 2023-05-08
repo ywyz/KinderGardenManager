@@ -3,6 +3,8 @@
 """
 
 import pymysql
+from PyQt6.QtWidgets import QFileDialog, QWidget
+import os
 
 
 class SQLConnect:
@@ -77,4 +79,17 @@ class SQLConnect:
             return False
 
 
-# Path: Function\StudentsManager.py
+    def Export_Data(self):
+        widget = QWidget()
+        # 获得包含文件路径+文件名的元组
+        # 例如：('C:/Users/lenovo/Desktop/1.txt', 'All Files (*)')
+        filename, filetype = QFileDialog.getSaveFileName(QWidget(), "选择保存文件名", "./", "sql Files (*.sql)")
+        user = 'ywyz'
+        password = 'YUEwei980924'
+        host = 'sh-cynosdbmysql-grp-lhkebs8k.sql.tencentcdb.com'
+        port = 21651
+        db = 'KinderGarten'
+        # 调用cmd命令导出数据库
+        cmd = f"mysqldump --column-statistics=0 -u{user} -p{password} -h{host} -P{port} {db} > {filename}"
+        os.system(cmd)
+        return True

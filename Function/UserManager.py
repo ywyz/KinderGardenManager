@@ -6,7 +6,8 @@ from Function.SQLConnect import SQLConnect
 
 class UserManager:
     def __init__(self):
-        self.db = SQLConnect().connect()
+        self.sql = SQLConnect()
+        self.db = self.sql.connect()
 
     def add_User(self, username, password, Permissions):
         """
@@ -60,7 +61,7 @@ class UserManager:
             self.db.close()
             return False
 
-    def change_User(self, username, password, newPassword,Permissions):
+    def change_User(self, username, password, newPassword, Permissions):
         """
         修改用户信息,需要用户名和旧密码一致
         :param username:
@@ -70,8 +71,9 @@ class UserManager:
         :return:
         """
         cursor = self.db.cursor()
-        cursor.execute("UPDATE Users SET UserPermissions = %s AND UserPassword = %s WHERE UserName = %s AND UserPassword = %s",
-                       (Permissions, newPassword, username, password))
+        cursor.execute(
+            "UPDATE Users SET UserPermissions = %s, UserPassword = %s WHERE UserName = %s AND UserPassword = %s",
+            (Permissions, newPassword, username, password))
         try:
             self.db.commit()
             self.db.close()

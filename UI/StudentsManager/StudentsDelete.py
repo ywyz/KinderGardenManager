@@ -7,9 +7,18 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import pyqtSignal
+
+from Function.StudentsManager import StudentsManager
 
 
-class Ui_Form(object):
+class Ui_StudentsDelete(QtWidgets.QWidget):
+    switched_to_students_basic_info_page = pyqtSignal()
+
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1280, 720)
@@ -40,6 +49,8 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.pushButton_2.clicked.connect(self.switch_to_students_basic_info_page)
+        self.pushButton.clicked.connect(self.deleteStudents)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -47,3 +58,14 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "需删除幼儿的姓名："))
         self.pushButton.setText(_translate("Form", "确认删除"))
         self.pushButton_2.setText(_translate("Form", "返回"))
+
+    def switch_to_students_basic_info_page(self):
+        self.switched_to_students_basic_info_page.emit()
+
+    def deleteStudents(self):
+        name = self.lineEdit.text()
+        stu = StudentsManager()
+        if stu.del_stu_info(name):
+            QtWidgets.QMessageBox.information(self, '提示', '删除成功！')
+        else:
+            QtWidgets.QMessageBox.information(self, '提示', '删除失败！')

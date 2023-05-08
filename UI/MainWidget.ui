@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainFunction</class>
- <widget class="QWidget" name="MainFunction">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1108</width>
-    <height>858</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>180</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>账号管理</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>300</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>学生（幼儿园）信息管理</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>430</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>食堂管理</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_4">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>570</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>后勤管理</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>180</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>后勤管理</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_6">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>300</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>教学管理</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_7">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>430</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>导入导出数据</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_8">
-   <property name="geometry">
-    <rect>
-     <x>550</x>
-     <y>570</y>
-     <width>231</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>退出</string>
-   </property>
-  </widget>
- </widget>
- <resources/>
- <connections/>
+    <class>MainFunction</class>
+    <widget class="QWidget" name="MainFunction">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>1108</width>
+                <height>858</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Form</string>
+        </property>
+        <widget class="QPushButton" name="pushButton">
+            <property name="geometry">
+                <rect>
+                    <x>190</x>
+                    <y>180</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>账号管理</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+            <property name="geometry">
+                <rect>
+                    <x>190</x>
+                    <y>300</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>学生（幼儿园）信息管理</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_3">
+            <property name="geometry">
+                <rect>
+                    <x>190</x>
+                    <y>430</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>食堂管理</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_4">
+            <property name="geometry">
+                <rect>
+                    <x>190</x>
+                    <y>570</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>后勤管理</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_5">
+            <property name="geometry">
+                <rect>
+                    <x>550</x>
+                    <y>180</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>后勤管理</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_6">
+            <property name="geometry">
+                <rect>
+                    <x>550</x>
+                    <y>300</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>教学管理</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_7">
+            <property name="geometry">
+                <rect>
+                    <x>550</x>
+                    <y>430</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>导入导出数据</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_8">
+            <property name="geometry">
+                <rect>
+                    <x>550</x>
+                    <y>570</y>
+                    <width>231</width>
+                    <height>71</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>退出</string>
+            </property>
+        </widget>
+    </widget>
+    <resources/>
+    <connections/>
 </ui>

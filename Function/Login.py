@@ -10,7 +10,7 @@ class Login:
         self.db = SQLConnect().connect()
 
     def login(self, username, password):
-        if(username == "" or password == ""):
+        if (username == "" or password == ""):
             return False
         cursor = self.db.cursor()
         cursor.execute("SELECT * FROM Users WHERE UserName = %s AND UserPassword = %s", (username, password))

@@ -9,7 +9,6 @@ UserFindUI.py
 用户信息查询界面,显示所有用户信息
 """
 
-
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTableWidgetItem
 
@@ -54,22 +53,21 @@ class Ui_FindUser(QtWidgets.QWidget):
         font.setPointSize(12)
         self.pushButton_2.setFont(font)
 
-
     def show_data(self):
         """
         显示所有用户信息
         """
         user = UserManager()
-        data = user.load_data()                 # 获取所有用户信息
+        data = user.load_data()  # 获取所有用户信息
         self.tableWidget.setRowCount(len(data))
         self.tableWidget.setColumnCount(len(data[0]))
-        self.tableWidget.setItem(0, 0, QTableWidgetItem("用户ID"))                # 设置表头
+        self.tableWidget.setItem(0, 0, QTableWidgetItem("用户ID"))  # 设置表头
         self.tableWidget.setItem(0, 1, QTableWidgetItem("用户名"))
         self.tableWidget.setItem(0, 2, QTableWidgetItem("用户密码"))
         self.tableWidget.setItem(0, 3, QTableWidgetItem("用户权限"))
         for i, row in enumerate(data):
             for j, value in enumerate(row):
-                if j == 3:                                  # 将权限数字转换为文字
+                if j == 3:  # 将权限数字转换为文字
                     if value == 0:
                         value = "园长"
                     elif value == 1:
@@ -78,7 +76,7 @@ class Ui_FindUser(QtWidgets.QWidget):
                         value = "保健老师"
                     elif value == None:
                         value = "未设置"
-                self.tableWidget.setItem(i+1, j, QTableWidgetItem(str(value)))
+                self.tableWidget.setItem(i + 1, j, QTableWidgetItem(str(value)))
 
     def switch_to_UserManager(self):
         self.switched_to_UserManager.emit()

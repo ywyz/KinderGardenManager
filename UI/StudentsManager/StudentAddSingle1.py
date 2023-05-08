@@ -8,7 +8,6 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import pyqtSignal
-from PyQt6.QtWidgets import QMessageBox, QLineEdit
 
 from Function.StudentsManager import StudentsManager
 
@@ -435,7 +434,6 @@ class Ui_StudentAddSingle1(QtWidgets.QWidget):
         self.lists.append(self.comboBox_14.currentText())
         self.lists.append(self.dateEdit.text())
         self.lists.append(self.dateEdit_2.text())
-
 
     def send_data_slot(self):
         self.send_data.emit(self.lists)

@@ -9,7 +9,9 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import pyqtSignal
 from PyQt6.QtWidgets import QFileDialog
+
 from Function.StudentsManager import StudentsManager
+
 
 class Ui_StudentAddMany(QtWidgets.QWidget):
     switched_to_students_basic_info_page = pyqtSignal()
@@ -62,5 +64,3 @@ class Ui_StudentAddMany(QtWidgets.QWidget):
             QtWidgets.QMessageBox.information(self, '提示', '导入成功！')
         else:
             QtWidgets.QMessageBox.information(self, '提示', '导入失败！')
-
-
